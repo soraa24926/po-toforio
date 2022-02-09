@@ -209,12 +209,12 @@ main > section > p {
 /* 文章の行の高さ */
   line-height: 1.8;
 }
-/* もっと見る */
+/* Lets play */
 main > section > .more {
   text-decoration: none;
   display: block;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   background: #08c;
   border-radius: 4px;
   padding: 12px;
@@ -239,7 +239,7 @@ main > section > .more {
   transform: rotateX(0);
 }
 
-/* もっと見るにカーソルが重なってる時 */
+/* Lets playにカーソルが重なってる時 */
 main a:hover {
   opacity: 0.8;
 }
