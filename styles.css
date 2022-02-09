@@ -1,0 +1,270 @@
+/*全体*/
+body{
+  color: #333;
+  font-family: Verdana, sans-serif;
+  /* 初期設定で作られてるためなくす */
+  margin: 0;
+}
+/*header全体*/
+header{
+  /* 横並び */
+  display: flex;
+  background-color: #efefef;
+  padding: 32px 16px;
+}
+
+/*header文字画像部分*/
+.container {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  /*横並びに設定*/
+  display: flex;
+  /*横並びにした際に高さを上下に合わせるか中央に揃えるか*/
+  align-items: center;
+}
+
+/*アイコンの画像*/
+.icon img {
+  border-radius: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: white;
+}
+/*画像部分との空間作成*/
+.info {
+  margin-left: 32px;
+}
+/*名前*/
+.info h1 {
+  /*文字を太くしない*/
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0;
+}
+/*自己紹介一言*/
+.info p {
+  margin: 0px;
+  margin-bottom: 16px;
+}
+/*SNSマーク*/
+.info ul {
+  margin: 0;
+  padding: 0px;
+  list-style-type: none;
+  /*横並び*/
+  display: flex;
+}
+/*SNSマークの間隔作り*/
+.info ul li {
+  margin-right: 8px;
+}
+/* メニュークリックアイテム */
+.menuopen{
+  /* 行の高さ */
+  line-height: 64px;
+  cursor: pointer;
+}
+/* 画面幅が指定以上だと出てくるPCメニュー */
+.pcmenu{
+display: none;
+}
+.pcmenu ul{
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/* メニューそれぞれの間隔作り */
+.pcmenu li{
+  margin-top: 8px;
+}
+/* PCメニューをホバーしたら */
+.pcmenu li:hover {
+  background: #ffffff;
+}
+
+/* メニュー */
+.menu{
+  /* ディスプレイからの指定場所に配置　スクロールしても動かず存在する */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  text-align: center;
+  /* 完全に透明にしてもクリックができてしまうのを防ぐ */
+  pointer-events: none;
+  padding: 64px;
+  /* 0.6秒かけてopasityの値を変化させるアニメーション設定 */
+  transition: opacity .6s;
+}
+/* 二つのclassやidの間にスペースがなかったら追加でjsなどで付与されたものを指定する際などに使う */
+/* メニューアイテムが押された後の処理 */
+.menu.show{
+  opacity: 1;
+  /* クリック可能に戻す */
+  pointer-events: auto;
+}
+
+/* メニュー閉じるアイテム */
+#closeitem{
+  /* 親要素がstatic(通常通りの配置)の場合は親要素からの指定位置へ配置、static以外だったらディスプレイからの位置に配置 */
+  position: absolute;
+  top:38px;
+  right:16px;
+  cursor: pointer;
+  /* 行の高さ */
+  line-height: 64px;
+}
+
+/* メニュー目次 */
+.menu ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* メニュー目次の間隔作りとアニメーション */
+.menu li{
+  margin-top: 24px;
+  opacity: 0;
+  /* 16px Y軸方向に置かれる */
+  transform: translateY(16px);
+  /* 0.3秒かけてopasityの値を変化させtransformでY軸方向に置かれたliを元の位置に戻すアニメーション設定 */
+  transition: opacity.3s,transform.3s;
+}
+/* メニューアイテムが押された後の処理 */
+.menu.show li {
+  opacity: 1;
+  /* Y軸方向に置く設定の解除 */
+  transform: none;
+}
+/* li要素1つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(1) {
+  /* li各要素のアニメーション作動開始を遅らせる */
+  transition-delay: .2s;
+}
+/* li要素２つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(2) {
+  transition-delay: .4s;
+}
+/* li要素３つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(3) {
+  transition-delay: .6s;
+}
+/* li要素４つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(4) {
+  transition-delay: .8s;
+}
+/* li要素５つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(5) {
+  transition-delay: 1.0s;
+}
+/* li要素６つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(6) {
+  transition-delay: 1.2s;
+}
+/* li要素７つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(7) {
+  transition-delay: 1.4s;
+}
+/* li要素８つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(8) {
+  transition-delay: 1.6s;
+}
+/* li要素９つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(9) {
+  transition-delay: 1.8s;
+}
+/* li要素１０つ目のメニューアイテムが押された後の処理 */
+.menu.show li:nth-child(10) {
+  transition-delay: 2.0s;
+}
+
+/* headerとfooter以外 */
+main {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+}
+
+
+/*  worksのスタイル */
+main > h1{
+  /*文字を太くしない*/
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+/* 各ポートフォリオ間の間隔作り */
+main > section {
+  margin-bottom: 60px;
+}
+/* 説明文章 */
+main > section > p {
+/* 文章の行の高さ */
+  line-height: 1.8;
+}
+/* もっと見る */
+main > section > .more {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  background: #08c;
+  border-radius: 4px;
+  padding: 12px;
+  color: #fff;
+}
+
+/* 左のアニメーショ */
+.anime#left{
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity .9s,transform .9s;
+}
+/* 右のアニメーション */
+.anime#right{
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity .9s,transform .9s;
+}
+/* jsで検知されてのアニメーション実行 */
+.anime#right.appear,.anime#left.appear{
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+/* もっと見るにカーソルが重なってる時 */
+main a:hover {
+  opacity: 0.8;
+}
+
+
+footer{
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 60px;
+  color: gray;
+}
+/* 指定以上の幅になったら */
+@media(min-width:1000px){
+  /* PCメニューを表示 */
+.pcmenu{
+  display: block;
+}
+/* メニューアイコンを無くす */
+.menuopen{
+  display: none;
+}
+/* ヘッダーのメイン部分もpcmenuが現れるとずれるので位置を再設定 */
+.container{
+  /* 元の位置から指定分移動 */
+position: relative;
+  left: 50px;
+}
+}
